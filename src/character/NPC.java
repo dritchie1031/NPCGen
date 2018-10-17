@@ -1,5 +1,7 @@
 package character;
 
+// this is a superficial change 
+
 import racetype.*;
 import classtype.*;
 /*
