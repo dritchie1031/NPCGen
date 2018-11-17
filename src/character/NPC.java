@@ -42,27 +42,18 @@ public class NPC {
 		RaceFeatures = race.getFeatures();
 		Age = Generator.generateNum(race.getAge());
 		Weight = Generator.generateNum(race.getWeight());
-		
+
 //		if(isCombatant) {
-//			Level = Generator.generateNum(new int[] {1,1,1,1,2,2,2,3,3,4,5});
-//			if(isClassed) {
-//				cla = (classtype.Class)Generator.generate(new Object[] {new Fighter(Level),new Cleric(Level),
-//					new Rogue(Level),new Wizard(Level),new Ranger(Level)});
-//			}
-//			else {
-//				int rand = (int)(Math.random()*2);
-//				switch(rand) {
-//				case 0: cla = new Soldier(Level);
-//				case 1: cla = new Bandit(Level);
-//				default: cla = new Bandit(Level);
-//				}
-//			}
+			Level = Generator.generateNum(new int[] {1,1,1,1,2,2,2,3,3,4,5});
+			if(isClassed) {
+				cla = new classtype.Class(Level, ClassName.getClassName(Generator.generateNum(new int[] {0,1,2,3,4,5,6,7,8,9,10,11})));
+			}
+			else {
+				cla = new classtype.Class(Level, ClassName.getClassName(Generator.generateNum(new int[] {12,13,14})));
+			}
 //		}
-		Level = Generator.generateNum(new int[] {1,1,1,1,2,2,2,3,3,4,5});
-		cla = new classtype.Class(Level, ClassName.getClassName(Generator.generateNum(new int[] {0,1,2,3,4,5,6,7,8,9,10,11})));
 //		else {
-//			Level = 1;
-//			cla = new Commoner(Level);
+//		TODO: Add "Commoner" and "Noble" classes for non-combat NPC's
 //		}
 		
 		int[] bonuses = race.getScoreBonuses();
@@ -79,6 +70,7 @@ public class NPC {
 		ClassFeatures = cla.getFeatures(); 
 		maxHealth += ((Stats[2]-10)/2)*Level; //Adding the Constitution modifier to the Health 
 	}
+
 	public String toString() {
 		String ret = FirstName+" "+Surname+"\n"+cla+" Level "+Level+"\n";
 		ret += "\nDescription: "+Height/12+"'"+Height%12+"\" "+Weight+" lbs., "+Age+" years old, "+Eyes+" eyes, "+Hair+" hair, "+Skin+" skin, "+s;

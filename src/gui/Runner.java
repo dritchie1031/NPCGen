@@ -28,7 +28,7 @@ public class Runner extends Application {
 		EventHandler<MouseEvent> nextScene  = new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent e) {
-				NPC character = new NPC(classCheck.isSelected(),combatCheck.isSelected());
+				NPC character = new NPC(combatCheck.isSelected(),classCheck.isSelected());
 				Text characterText = new Text(character.toString());
 				System.out.println(character);
 				characterText.setX(50);

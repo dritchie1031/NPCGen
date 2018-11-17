@@ -1,8 +1,9 @@
 package classtype;
 
 public enum ClassName {
-	BARBARIAN("Barbarian"), BARD("Bard"), CLERIC("Cleric"), DRUID("Druid"), FIGHTER("Fighter"), MONK("Monk"), PALADIN("Paladin"), 
-		RANGER("Ranger"), ROGUE("Rogue"), SORCERER("Sorcerer"), WARLOCK("Warlock"), WIZARD("Wizard");
+	BARBARIAN("Barbarian"), BARD("Bard"), CLERIC("Cleric"), DRUID("Druid"), FIGHTER("Fighter"), MONK("Monk"),
+	PALADIN("Paladin"), RANGER("Ranger"), ROGUE("Rogue"), SORCERER("Sorcerer"), WARLOCK("Warlock"), WIZARD("Wizard"),
+	BANDIT("Bandit"),CULTIST("Cultist"),SOLDIER("Soldier");
 	
 	private String name;
 	
@@ -18,29 +19,35 @@ public enum ClassName {
 	public static ClassName getClassName(int i) {
 		switch (i) {
 		case 0:
-			return ClassName.BARBARIAN;
+			return BARBARIAN;
 		case 1:
-			return ClassName.BARD;
+			return BARD;
 		case 2:
-			return ClassName.CLERIC;
+			return CLERIC;
 		case 3:
-			return ClassName.DRUID;
+			return DRUID;
 		case 4:
-			return ClassName.FIGHTER;
+			return FIGHTER;
 		case 5:
-			return ClassName.MONK;
+			return MONK;
 		case 6:
-			return ClassName.PALADIN;
+			return PALADIN;
 		case 7:
-			return ClassName.RANGER;
+			return RANGER;
 		case 8:
-			return ClassName.ROGUE;
+			return ROGUE;
 		case 9:
-			return ClassName.SORCERER;
+			return SORCERER;
 		case 10:
-			return ClassName.WARLOCK;
+			return WARLOCK;
 		case 11:
-			return ClassName.WIZARD;
+			return WIZARD;
+		case 12:
+			return BANDIT;
+		case 13:
+			return CULTIST;
+		case 14:
+			return SOLDIER;
 		default:
 			return ClassName.FIGHTER;
 		}
